@@ -1,0 +1,956 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Welcome to WonderPy’s documentation! &mdash; wonder  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> wonder
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to WonderPy’s documentation!</a></li>
+<li><a class="reference internal" href="#tutorial">Tutorial</a><ul>
+<li><a class="reference internal" href="#set-up-your-adafruit-clue">Set up your Adafruit Clue</a><ul>
+<li><a class="reference internal" href="#install-circuitpython">Install CircuitPython</a></li>
+<li><a class="reference internal" href="#install-circuitpython-adafruit-libraries">Install CircuitPython/Adafruit libraries</a></li>
+<li><a class="reference internal" href="#install-wonder-workshop-s-module-for-controlling-dash-cue-wonder">Install Wonder Workshop’s module for controlling Dash/Cue, ‘<code class="docutils literal notranslate"><span class="pre">wonder</span></code>’</a></li>
+<li><a class="reference internal" href="#write-your-first-clue-circuitpython-dash-program">Write your first Clue+CircuitPython+Dash program</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-wonder"><code class="docutils literal notranslate"><span class="pre">wonder</span></code> Module Documentation</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">wonder</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to WonderPy’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-wonderpy-s-documentation">
+<h1>Welcome to WonderPy’s documentation!<a class="headerlink" href="#welcome-to-wonderpy-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This document provides instructions to control Wonder Workshop’s “Dash” and
+“Cue” robots with the Adafruit Clue board and CircuitPython.</p>
+<p>Dash and Cue educational robots used in a wide variety of settings, including
+classrooms and homes. Read more at <a class="reference external" href="http://makewonder.com">here</a>.</p>
+<p>The Adafruit Clue is a small microcontroller development board with built-in
+Bluetooth BLE capabilities. Read more about the Adafruit Clue <a class="reference external" href="https://learn.adafruit.com/adafruit-clue">here</a>.</p>
+<p>CircuitPython is a small implementation of the Python programming language
+that can run on small microcontrollers, such as the Adafruit Clue.</p>
+</div>
+<div class="section" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial assumes that you are using a standard Dash robot with an Adafruit
+Clue and a CircuitPython version of at least 6.2.0.</p>
+<div class="section" id="set-up-your-adafruit-clue">
+<h2>Set up your Adafruit Clue<a class="headerlink" href="#set-up-your-adafruit-clue" title="Permalink to this headline">¶</a></h2>
+<p>To get started, we will need to set up your Adafruit Clue.</p>
+<div class="section" id="install-circuitpython">
+<h3>Install CircuitPython<a class="headerlink" href="#install-circuitpython" title="Permalink to this headline">¶</a></h3>
+<p>First, you will need to install CircuitPython version 6.2.0.
+This tutorial will provide abriged setup instructions. Up-to-date instructions can be found
+<a class="reference external" href="https://learn.adafruit.com/adafruit-clue/circuitpython">here</a>.</p>
+<ol class="arabic simple">
+<li><p>Download the CircuitPython 6.3.0 image <a class="reference external" href="https://circuitpython.org/board/clue_nrf52840_express/">here</a>.</p></li>
+<li><p>Attach your Adafruit Clue to a PC computer witha Micro-USB cable.</p></li>
+<li><p>Double-click the reset button on the back of the Adafruit Clue. It should
+now show up as a drive called “CLUEBOOT”.</p></li>
+<li><p>Copy the image file downloaded earlier (should be a .uf2 file) to the
+CLUEBOOT drive. The Clue board should reboot and CircuitPython should print a
+welcome message onto the screen. The clue board should now show up as a drive called “CIRCUITPY”.</p></li>
+</ol>
+</div>
+<div class="section" id="install-circuitpython-adafruit-libraries">
+<h3>Install CircuitPython/Adafruit libraries<a class="headerlink" href="#install-circuitpython-adafruit-libraries" title="Permalink to this headline">¶</a></h3>
+<p>Next, you will need to install CircuitPython libraries. Adafruit
+and CircuitPython provide libraries and modules to support a wide variety of
+sensors and peripherals. In order to control Wonder Workshop robots, a
+library must be installed in order to use the on-board Bluetooth BLE
+module.</p>
+<p>First, you will need to download the set of libraries <a class="reference external" href="https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20210811/adafruit-circuitpython-bundle-6.x-mpy-20210811.zip">here</a>.
+The one library required to control Wonder Workshop robots is called
+<code class="docutils literal notranslate"><span class="pre">adafruit_ble</span></code>. To install the library, open the downloaded zip file and copy
+the <code class="docutils literal notranslate"><span class="pre">adafruit_ble</span></code> directory into the <code class="docutils literal notranslate"><span class="pre">CIRCUITPY/lib/</span></code> directory, where
+<code class="docutils literal notranslate"><span class="pre">CIRCUITPY</span></code> is the root directory of your Clue drive.</p>
+<p>If/when you attach more sensors and peripherals to your Clue board, you may
+need to install more libraries to control those sensors and peripherals. We
+recommend keeping the zip file handy as you develop your Clue/Dash application,
+especially if it will require additional sensors or peripherals in the future.</p>
+</div>
+<div class="section" id="install-wonder-workshop-s-module-for-controlling-dash-cue-wonder">
+<h3>Install Wonder Workshop’s module for controlling Dash/Cue, ‘<code class="docutils literal notranslate"><span class="pre">wonder</span></code>’<a class="headerlink" href="#install-wonder-workshop-s-module-for-controlling-dash-cue-wonder" title="Permalink to this headline">¶</a></h3>
+<p>TODO</p>
+</div>
+<div class="section" id="write-your-first-clue-circuitpython-dash-program">
+<h3>Write your first Clue+CircuitPython+Dash program<a class="headerlink" href="#write-your-first-clue-circuitpython-dash-program" title="Permalink to this headline">¶</a></h3>
+<p>We are now ready to try our first Python program that controls Dash. We will
+first present a complete code sample and then describe each line in detail.
+Here is a simple program which makes Dash drive 30cm forward and then performs
+a 360 degree spin to the right:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+
+<span class="n">robot</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="o">-</span><span class="mi">360</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first statement of the program, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">wonder</span></code> , imports the <code class="docutils literal notranslate"><span class="pre">wonder</span></code>
+module which contains the required classes and functions for controlling Wonder
+Workshop robots.</p>
+<p>The next statement reads <code class="docutils literal notranslate"><span class="pre">robot</span> <span class="pre">=</span> <span class="pre">wonder.Dash('Dash')</span></code>. The expression
+<code class="docutils literal notranslate"><span class="pre">wonder.Dash('Dash')</span></code> finds and connects to a robot named ‘Dash’<a class="footnote-reference brackets" href="#id6" id="id5">1</a> and creates
+a <code class="docutils literal notranslate"><span class="pre">wonder.Dash</span></code> object. The object is then saved to a variable named <code class="docutils literal notranslate"><span class="pre">robot</span></code>.
+The new <code class="docutils literal notranslate"><span class="pre">robot</span></code> variable contains a great many member functions that perform
+a variety of functions, including moving the robot’s wheels and head, controlling
+the robot’s LED lights, and reading data from the robot’s various sensors,
+such as the wheel odometers, IR rangefinders, accelerometer, and more.</p>
+<p>The next statement, <code class="docutils literal notranslate"><span class="pre">robot.drive(30)</span></code>, uses the <code class="docutils literal notranslate"><span class="pre">drive()</span></code> member function
+to make Dash drive 30cm forward. The argument value is in units of centimeters
+and negative values make the robot drive backward.</p>
+<p>The final statement, <code class="docutils literal notranslate"><span class="pre">robot.turn(-360)</span></code>, make the robot turn in a complete
+circle in the clockwise direction as viewed from above the robot. The argument
+is in units of degrees and positive values make the robot turn
+counter-clockwise.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dd><p>Dash robots come from the factory with a default name of ‘Dash’. The robots may be renamed using the ‘wonder’ app, available on any smartphone.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="module-wonder">
+<span id="wonder-module-documentation"></span><h1><code class="docutils literal notranslate"><span class="pre">wonder</span></code> Module Documentation<a class="headerlink" href="#module-wonder" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="wonder.Dash">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">wonder.</span></span><span class="sig-name descname"><span class="pre">Dash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Dash'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_sensor0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_sensor1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for controlling Dash and Cue robots.</p>
+<p>This class contains a number of member functions to peform a variety of
+tasks related to Dash and Cue robots. These tasks include:</p>
+<ul class="simple">
+<li><p>Moving the robot</p></li>
+<li><p>Getting sensor information from the robot</p></li>
+<li><p>Registering callback functions to be invoked when certain events occur.</p></li>
+</ul>
+<p>Examples:</p>
+<blockquote>
+<div><p>Moving the robot forward 20 centimeters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">()</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Setting the left ear RGB LED to purple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">()</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">left_ear_led</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Very naive object following for 1 minute:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">()</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">ir_distance_left</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="n">robot</span><span class="o">.</span><span class="n">linear_angular</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">robot</span><span class="o">.</span><span class="n">linear_angular</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">robot</span><span class="o">.</span><span class="n">linear_angular</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the robot to connect to. Defaults to “Dash”</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.add_button_1_cb">
+<span class="sig-name descname"><span class="pre">add_button_1_cb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.add_button_1_cb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a function to be called whenever the button 1 is pressed.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.add_button_main_cb" title="wonder.Dash.add_button_main_cb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dash.add_button_main_cb()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.add_button_2_cb">
+<span class="sig-name descname"><span class="pre">add_button_2_cb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.add_button_2_cb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a function to be called whenever the button 2 is pressed.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.add_button_main_cb" title="wonder.Dash.add_button_main_cb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dash.add_button_main_cb()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.add_button_3_cb">
+<span class="sig-name descname"><span class="pre">add_button_3_cb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.add_button_3_cb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a function to be called whenever the button 3 is pressed.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.add_button_main_cb" title="wonder.Dash.add_button_main_cb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dash.add_button_main_cb()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.add_button_main_cb">
+<span class="sig-name descname"><span class="pre">add_button_main_cb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.add_button_main_cb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a function to be called whenever the main button is pressed.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">button_down</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">button_down</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Main button pressed!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Main button released!&#39;</span><span class="p">)</span>
+
+<span class="n">dash</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">add_button_main_cb</span><span class="p">(</span><span class="n">my_func</span><span class="p">)</span>
+<span class="c1"># Press Dash&#39;s main button now to trigger `my_func()`</span>
+
+<span class="c1"># Spin the program forever so we can wait for button events</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">wonder</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.sleep" title="wonder.sleep"><code class="xref py py-func docutils literal notranslate"><span class="pre">wonder.sleep()</span></code></a></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fn</strong> (<em>fn</em><em>(</em><em>bool</em><em>)</em><em>-&gt;bool</em>) – A function of the form fn(button_down)-&gt;bool . If the return
+value of the callback function evaluates to “True”, it will not be
+called again.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Button handler id</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.drive">
+<span class="sig-name descname"><span class="pre">drive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.drive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drive Dash forward or backward.</p>
+<p>Drive the robot a certain distance in a desired amount of time.
+Negative distances make Dash drive backwards. Smaller ‘time’ values
+cause the robot to travel faster.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">dash</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># Dash will drive 50cm forward in 5 seconds</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cm</strong> (<em>float</em>) – distance to travel (cm)A</p></li>
+<li><p><strong>time</strong> (<em>float</em>) – time to perform the motion (seconds)</p></li>
+<li><p><strong>wait</strong> (<em>bool</em>) – Wait for the motion to finish. If this is set to “False”,
+this function will return immediately. Otherwise, this function will
+block until the movement is finished.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.front_led">
+<span class="sig-name descname"><span class="pre">front_led</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">red</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">green</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.front_led" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change Dash’s chest LED color.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.left_ear_led" title="wonder.Dash.left_ear_led"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.left_ear_led()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_accel">
+<span class="sig-name descname"><span class="pre">get_accel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_accel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s accelerometer readings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An list of three floats. Each number represents the current
+detected acceleration for axes X, Y, and Z in units of Earth G’s.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_encoders">
+<span class="sig-name descname"><span class="pre">get_encoders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_encoders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s current encoder values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of two values representing the current odometry of the
+left and right wheels.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_head_pan_angle">
+<span class="sig-name descname"><span class="pre">get_head_pan_angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_head_pan_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s current head pan angle</p>
+<p>A pan angle of 0 indicates Dash is looking straight forward. Positive
+values mean Dash is lookin to the left, negative values mean Dash is
+looking to the right.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dash’s head pan angle in degrees.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_head_tilt_angle">
+<span class="sig-name descname"><span class="pre">get_head_tilt_angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_head_tilt_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s current head tilt angle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dash’s head tilt angle in degrees</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_ir_left">
+<span class="sig-name descname"><span class="pre">get_ir_left</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_ir_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s current front-left IR rangefinder reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an estimated distance in cm</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_ir_rear">
+<span class="sig-name descname"><span class="pre">get_ir_rear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_ir_rear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s current rear IR rangefinder reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an estimated distance in cm</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_ir_right">
+<span class="sig-name descname"><span class="pre">get_ir_right</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_ir_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s current front-right IR rangefinder reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an estimated distance in cm</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.get_pose">
+<span class="sig-name descname"><span class="pre">get_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.get_pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Dash’s current pose estimate</p>
+<p>Dash maintains a pose estimate based on wheel odometry and gyro
+integration. The internal pose estimate consists of an (x,y) coordinate
+and a orientation angle. Dash resets its internal pose estimate to
+(0,0,0) upon startup. The “set_pose()” member function may also be used
+to set Dash’s internal pose estimate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A tuple of floats, (x_cm, y_cm, angle_degrees)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.goto">
+<span class="sig-name descname"><span class="pre">goto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrees</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.goto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make Dash drive to a particular location and orientation.</p>
+<p>This commands moves the robot from its current position to a relative
+position (x,y). The coordinate system is fixed to Dash’s body as shown in
+ascii image below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="o">+</span><span class="n">X</span>  <span class="p">(</span><span class="n">Forward</span><span class="p">)</span>
+         <span class="o">^</span>
+         <span class="o">|</span>         <span class="o">&lt;-</span>
+         <span class="o">|</span>            \
+<span class="o">+</span><span class="n">Y</span> <span class="o">&lt;---</span> <span class="n">Robot</span>  <span class="o">+</span><span class="n">Angle</span> <span class="o">|</span>
+<span class="p">(</span><span class="n">Left</span><span class="p">)</span>                <span class="o">/</span>
+</pre></div>
+</div>
+<p>For example, the following command will move Dash so that it ends up 10
+centimeters forward and facing to the left:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">()</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Similarly, the following command will make Dash move so that it ends up
+10 centimeters to the right of its starting position:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, the next command turns Dash in place 30 degrees to the right:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – number of centimeters to move forward</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – number of centimeters to move to the left</p></li>
+<li><p><strong>degrees</strong> (<em>float</em>) – Number of degrees counter-clockwise for the end position
+to be offset from the starting position.</p></li>
+<li><p><strong>time</strong> (<em>float</em>) – Number of seconds allotted to complete the action.
+Larger numbers result in slower movement.</p></li>
+<li><p><strong>wait</strong> (<em>bool</em>) – Wait for the motion to finish. If this is set to “False”,
+this function will return immediately. Otherwise, this function will
+block until the movement is finished.</p></li>
+<li><p><strong>motion_type</strong> – One of <code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.FORWARD</span></code>,
+<code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.BACKWARD</span></code>, or <code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.INFERRED</span></code>. <cite>FORWARD</cite> forces
+the robot to travel in its relative forward direction to reach the
+destination, <cite>BACKWARD</cite> forces the robot to travel backward, and
+<cite>INFERRED</cite> picks the direction automatically depending on the relative
+position of the destination. <cite>INFERRED</cite> is default.</p></li>
+<li><p><strong>coord</strong> – <p>One of <code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.GLOBAL</span></code>,
+<code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.REL_COMMANDED</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.REL_MEASURED</span></code> (default), or
+<code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.TEMP_GLOBAL</span></code>.</p>
+<ul>
+<li><p><code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.GLOBAL</span></code> 
+indicates that the specified x,y,angle coordinates are global
+coordinates. Dash sets its global pose estimate to (0,0,0) upon
+startup. The global pose estimate may also be set by
+<a class="reference internal" href="#wonder.Dash.set_pose" title="wonder.Dash.set_pose"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.set_pose()</span></code></a>.</p></li>
+<li><p><code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.REL_COMMANDED</span></code> indicates that the specified
+coordinates are relative to the last commanded destination from the
+previous <a class="reference internal" href="#wonder.Dash.goto" title="wonder.Dash.goto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.goto()</span></code></a>, <a class="reference internal" href="#wonder.Dash.drive" title="wonder.Dash.drive"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.drive()</span></code></a>, or
+<a class="reference internal" href="#wonder.Dash.turn" title="wonder.Dash.turn"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.turn()</span></code></a> function call. When Dash/Cue are commanded
+to go to a certain destination, there may be some error/difference
+between the the robot’s actual final pose and the expected pose.
+Specifying <code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.REL_COMMANDED</span></code> indicates that the new
+target destination should be calculated from the theoretical
+commanded position of the robot rather than the actual current
+position.</p></li>
+<li><p><code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.REL_MEASURED</span></code> indicates that the destination
+coordinates should be calculated relative to the robots actual
+current estimated location.</p></li>
+<li><p><code class="xref py py-const docutils literal notranslate"><span class="pre">wonder.TEMP_GLOBAL</span></code> indicates that the destination
+coordinates are specified in a temporary global reference frame.
+See also: <a class="reference internal" href="#wonder.Dash.set_pose" title="wonder.Dash.set_pose"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.set_pose()</span></code></a>.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function may be “spammed” (called repeatedly with high
+frequency) to make the robot travel in smooth
+complex paths. Spamming at a period of 100ms-200ms is typically sufficient
+to make Dash drive smoothly along complex paths. Just ensure that the 
+<code class="docutils literal notranslate"><span class="pre">time</span></code> parameter is set to the same or similar period that this 
+function is being called or the robot may jitter.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.head_pan_angle">
+<span class="sig-name descname"><span class="pre">head_pan_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hold_forever</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.head_pan_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pan Dash’s head left/right</p>
+<p>Move Dash’s head to a left/right position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angle</strong> (<em>float</em>) – The desired head angle in degrees. An angle of “0”
+indicates straight forward. Positive values make Dash look left.</p></li>
+<li><p><strong>time</strong> (<em>float</em>) – Time interval to move to desired angle. Higher values make
+Dash move its head slower.</p></li>
+<li><p><strong>hold_forever</strong> (<em>bool</em>) – If set to true, Dash will actively maintain the
+desired head angle even if there are outside forces acting on Dash’s
+head.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.head_tilt_angle">
+<span class="sig-name descname"><span class="pre">head_tilt_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hold_forever</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.head_tilt_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tilt Dash’s head up/down</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angle</strong> (<em>float</em>) – The desired head angle in degrees. An angle of “0”
+indicates straight forward. Positive values make Dash look up.</p></li>
+<li><p><strong>time</strong> (<em>float</em>) – Time interval to move to desired angle. Higher values make
+Dash move its head slower.</p></li>
+<li><p><strong>hold_forever</strong> (<em>bool</em>) – If set to true, Dash will actively maintain the
+desired head angle even if there are outside forces acting on Dash’s
+head.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.is_stopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>See if Dash is moving or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.left_ear_led">
+<span class="sig-name descname"><span class="pre">left_ear_led</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">red</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">green</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.left_ear_led" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change Dash’s left ear LED color</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Turn Dash&#39;s left ear LED to a bright purple color</span>
+<span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">dash</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">left_ear_led</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>red</strong> (<em>int</em>) – Intensity of red channel (0-255)</p></li>
+<li><p><strong>green</strong> (<em>int</em>) – Intensity of green channel (0-255)</p></li>
+<li><p><strong>blue</strong> (<em>int</em>) – Intensity of blue channel (0-255)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.linear_angular">
+<span class="sig-name descname"><span class="pre">linear_angular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lin_vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang_vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.linear_angular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make Dash begin driving forward/backward/turning</p>
+<p>This function causes Dash to start driving at a certain speed and turn
+speed forever until another drive command is received.</p>
+<p>Example:</p>
+<p>Make Dash travel forward at 20cm/s for 5 seconds</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">dash</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">linear_angular</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">wonder</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The previous example may not move the robot exactly 20*5=100cm due
+to innaccuracies in timing. If precise distance is required, 
+use the <a class="reference internal" href="#wonder.Dash.drive" title="wonder.Dash.drive"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.drive()</span></code></a> or <a class="reference internal" href="#wonder.Dash.goto" title="wonder.Dash.goto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.goto()</span></code></a>
+methods.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.sleep" title="wonder.sleep"><code class="xref py py-func docutils literal notranslate"><span class="pre">wonder.sleep()</span></code></a>,
+<a class="reference internal" href="#wonder.Dash.stop" title="wonder.Dash.stop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.stop()</span></code></a></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lin_vel</strong> (<em>float</em>) – Linear velocity in cm/s. Negative values cause Dash to
+begin rolling backward.</p></li>
+<li><p><strong>ang_vel</strong> (<em>float</em>) – Angular velocity in deg/s. Positive values make Dash
+turn left at ang_vel deg/s.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.move_wait">
+<span class="sig-name descname"><span class="pre">move_wait</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.move_wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block until Dash has stopped moving</p>
+<p>This function will “block” until Dash has stopped moving.</p>
+<p>The following example performs a number of steps. Firsh, Dash is
+commanded to drive 50 centimeters forward. Because the “wait” keyword
+argument is set to “False”, the “dash.drive()” function immediately
+returns and the next statement is executed. The next statements make
+Dash turn its head right, and then left, while Dash is still moving.
+Finally, the “dash.move_wait()” statement is executed which waits until
+Dash has stopped moving. Finally, after Dash has stopped moving, Dash
+is commanded to look straight forward.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">dash</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">head_pan_angle</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">head_pan_angle</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">move_wait</span><span class="p">()</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">head_pan_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.on_button_1">
+<span class="sig-name descname"><span class="pre">on_button_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_down</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.on_button_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Button handler for button 1.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.on_button_main" title="wonder.Dash.on_button_main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dash.on_button_main()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.on_button_2">
+<span class="sig-name descname"><span class="pre">on_button_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_down</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.on_button_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Button handler for button 2.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.on_button_main" title="wonder.Dash.on_button_main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dash.on_button_main()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.on_button_3">
+<span class="sig-name descname"><span class="pre">on_button_3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_down</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.on_button_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Button handler for button 3.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.on_button_main" title="wonder.Dash.on_button_main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dash.on_button_main()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.on_button_main">
+<span class="sig-name descname"><span class="pre">on_button_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_down</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.on_button_main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Button handler for Dash’s main button.</p>
+<p>Override this function with your own. This function will be called any
+time the main button state changes, either being pressed or released.
+The “button_down” parameter will indicate the new button state. For
+instance, if the button is being pressed, “button_down” will be True.
+If it is being released, “button_down” will be false.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">class</span> <span class="nc">MyDash</span><span class="p">(</span><span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_button_main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">button_down</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">button_down</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Button main pressed!&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Button main released!&#39;</span><span class="p">)</span>
+
+<span class="n">dash</span> <span class="o">=</span> <span class="n">MyDash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="c1"># Press the main button to trigger the custom callback</span>
+
+<span class="c1"># Spin the program forever so we can wait for button events</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">wonder</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.sleep" title="wonder.sleep"><code class="xref py py-func docutils literal notranslate"><span class="pre">wonder.sleep()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.right_ear_led">
+<span class="sig-name descname"><span class="pre">right_ear_led</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">red</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">green</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.right_ear_led" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change Dash’s right ear LED color.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.left_ear_led" title="wonder.Dash.left_ear_led"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.left_ear_led()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.set_pose">
+<span class="sig-name descname"><span class="pre">set_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.set_pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Dash’s current pose estimate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>temporary</strong> (<em>bool</em>) – If true, instruct the robot to create a temporary
+global reference frame. See also: <a class="reference internal" href="#wonder.Dash.goto" title="wonder.Dash.goto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wonder.Dash.goto()</span></code></a>.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#wonder.Dash.get_pose" title="wonder.Dash.get_pose"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dash.get_pose()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Immediately stop Dash’s motors</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.turn">
+<span class="sig-name descname"><span class="pre">turn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.turn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make Dash turn in place</p>
+<p>Make Dash turn in place. Positive values make Dash turn left. Use
+negative values to turn right.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wonder</span>
+<span class="n">dash</span> <span class="o">=</span> <span class="n">wonder</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="s1">&#39;Dash&#39;</span><span class="p">)</span>
+<span class="n">dash</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle</strong> (<em>float</em>) – Angle to turn (degrees)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="wonder.DashTerminal">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">wonder.</span></span><span class="sig-name descname"><span class="pre">DashTerminal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.DashTerminal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wonder.sleep">
+<span class="sig-prename descclassname"><span class="pre">wonder.</span></span><span class="sig-name descname"><span class="pre">sleep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pause the program for some time.</p>
+<p>On the Adafruit Clue and other CircuitPython implementations, this sleep
+function is preferred over <code class="docutils literal notranslate"><span class="pre">time.sleep()</span></code> because it allows Dash to continue
+emitting/receiving sensor data in the background.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seconds</strong> (<em>float</em>) – The number of seconds to pause</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Wonder Workshop.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

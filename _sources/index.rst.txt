@@ -1,0 +1,128 @@
+.. WonderPy documentation master file, created by
+   sphinx-quickstart on Wed Jul 28 11:11:43 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to WonderPy's documentation!
+====================================
+
+This document provides instructions to control Wonder Workshop's "Dash" and
+"Cue" robots with the Adafruit Clue board and CircuitPython. 
+
+Dash and Cue educational robots used in a wide variety of settings, including
+classrooms and homes. Read more at `here <http://makewonder.com>`_. 
+
+The Adafruit Clue is a small microcontroller development board with built-in
+Bluetooth BLE capabilities. Read more about the Adafruit Clue `here
+<https://learn.adafruit.com/adafruit-clue>`_. 
+
+CircuitPython is a small implementation of the Python programming language
+that can run on small microcontrollers, such as the Adafruit Clue.
+
+Tutorial
+========
+
+This tutorial assumes that you are using a standard Dash robot with an Adafruit
+Clue and a CircuitPython version of at least 6.2.0.
+
+Set up your Adafruit Clue
+-------------------------
+
+To get started, we will need to set up your Adafruit Clue.
+
+Install CircuitPython
+.....................
+
+First, you will need to install CircuitPython version 6.2.0.
+This tutorial will provide abriged setup instructions. Up-to-date instructions can be found 
+`here <https://learn.adafruit.com/adafruit-clue/circuitpython>`_.
+
+1. Download the CircuitPython 6.3.0 image `here <https://circuitpython.org/board/clue_nrf52840_express/>`_. 
+2. Attach your Adafruit Clue to a PC computer witha Micro-USB cable.
+3. Double-click the reset button on the back of the Adafruit Clue. It should
+   now show up as a drive called "CLUEBOOT". 
+4. Copy the image file downloaded earlier (should be a .uf2 file) to the
+   CLUEBOOT drive. The Clue board should reboot and CircuitPython should print a
+   welcome message onto the screen. The clue board should now show up as a drive called "CIRCUITPY". 
+
+
+Install CircuitPython/Adafruit libraries
+........................................
+
+Next, you will need to install CircuitPython libraries. Adafruit
+and CircuitPython provide libraries and modules to support a wide variety of
+sensors and peripherals. In order to control Wonder Workshop robots, a 
+library must be installed in order to use the on-board Bluetooth BLE
+module. 
+
+First, you will need to download the set of libraries `here <https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20210811/adafruit-circuitpython-bundle-6.x-mpy-20210811.zip>`_.
+The one library required to control Wonder Workshop robots is called
+``adafruit_ble``. To install the library, open the downloaded zip file and copy
+the ``adafruit_ble`` directory into the ``CIRCUITPY/lib/`` directory, where
+``CIRCUITPY`` is the root directory of your Clue drive.
+
+If/when you attach more sensors and peripherals to your Clue board, you may
+need to install more libraries to control those sensors and peripherals. We
+recommend keeping the zip file handy as you develop your Clue/Dash application,
+especially if it will require additional sensors or peripherals in the future.
+
+Install Wonder Workshop's module for controlling Dash/Cue, '``wonder``'
+.......................................................................
+
+TODO
+
+Write your first Clue+CircuitPython+Dash program
+................................................
+
+We are now ready to try our first Python program that controls Dash. We will
+first present a complete code sample and then describe each line in detail.
+Here is a simple program which makes Dash drive 30cm forward and then performs
+a 360 degree spin to the right::
+
+    import wonder
+
+    robot = wonder.Dash('Dash')
+    robot.drive(30)
+    robot.turn(-360)
+
+The first statement of the program, ``import wonder`` , imports the ``wonder``
+module which contains the required classes and functions for controlling Wonder
+Workshop robots.
+
+The next statement reads ``robot = wonder.Dash('Dash')``. The expression
+``wonder.Dash('Dash')`` finds and connects to a robot named 'Dash'[1]_ and creates
+a ``wonder.Dash`` object. The object is then saved to a variable named ``robot``.
+The new ``robot`` variable contains a great many member functions that perform
+a variety of functions, including moving the robot's wheels and head, controlling
+the robot's LED lights, and reading data from the robot's various sensors,
+such as the wheel odometers, IR rangefinders, accelerometer, and more. 
+
+The next statement, ``robot.drive(30)``, uses the ``drive()`` member function
+to make Dash drive 30cm forward. The argument value is in units of centimeters
+and negative values make the robot drive backward.
+
+The final statement, ``robot.turn(-360)``, make the robot turn in a complete
+circle in the clockwise direction as viewed from above the robot. The argument
+is in units of degrees and positive values make the robot turn
+counter-clockwise.
+
+.. [1] Dash robots come from the factory with a default name of 'Dash'. The robots may be renamed using the 'wonder' app, available on any smartphone.
+
+``wonder`` Module Documentation
+===============================
+
+.. automodule:: wonder
+    :members:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
