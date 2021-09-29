@@ -23,7 +23,7 @@ Tutorial
 ========
 
 This tutorial assumes that you are using a standard Dash robot with an Adafruit
-Clue and a CircuitPython version of at least 6.2.0.
+Clue.
 
 Set up your Adafruit Clue
 -------------------------
@@ -33,11 +33,11 @@ To get started, we will need to set up your Adafruit Clue.
 Install CircuitPython
 .....................
 
-First, you will need to install CircuitPython version 6.2.0.
-This tutorial will provide abriged setup instructions. Up-to-date instructions can be found 
+First, you will need to install CircuitPython version 7.0.0.
+This tutorial will provide abridged setup instructions. Up-to-date instructions can be found 
 `here <https://learn.adafruit.com/adafruit-clue/circuitpython>`_.
 
-1. Download the CircuitPython 6.3.0 image `here <https://circuitpython.org/board/clue_nrf52840_express/>`_. 
+1. Download the CircuitPython 7.0.0 image `here <https://circuitpython.org/board/clue_nrf52840_express/>`_. 
 2. Attach your Adafruit Clue to a PC computer witha Micro-USB cable.
 3. Double-click the reset button on the back of the Adafruit Clue. It should
    now show up as a drive called "CLUEBOOT". 
@@ -55,7 +55,7 @@ sensors and peripherals. In order to control Wonder Workshop robots, a
 library must be installed in order to use the on-board Bluetooth BLE
 module. 
 
-First, you will need to download the set of libraries `here <https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20210811/adafruit-circuitpython-bundle-6.x-mpy-20210811.zip>`_.
+First, you will need to download the set of libraries `here <https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20210928/adafruit-circuitpython-bundle-7.x-mpy-20210928.zip>`_.
 The one library required to control Wonder Workshop robots is called
 ``adafruit_ble``. To install the library, open the downloaded zip file and copy
 the ``adafruit_ble`` directory into the ``CIRCUITPY/lib/`` directory, where
@@ -69,7 +69,36 @@ especially if it will require additional sensors or peripherals in the future.
 Install Wonder Workshop's module for controlling Dash/Cue, '``wonder``'
 .......................................................................
 
-TODO
+Download the ``wonder`` module here `here <https://github.com/playi/PythonWonderDocs/raw/master/wonderpy_0.0.1_circuitpython_7.0.0.zip>`_.
+
+The zip file contains a directory named "wonder". Copy the entire "wonder" directory
+onto your Clue board into the directory ``<CIRCUITPY>/lib/`` . You should now be able to 
+use the ``wonder`` module on your Adafruit Clue Python programs.
+
+Running Python Programs on the Adafruit Clue
+............................................
+You are now ready to write and run Python programs on your Adafruit Clue. You
+may use any basic text editor, such as Microsoft Notepad, to edit your Python
+programs, but we recommend using a real code editor. Many are available for free, 
+such as the `Sublime Code Editor <https://www.sublimetext.com/>`_. 
+
+To run code on the Adafruit Clue, you will need to edit or create a file called 
+"code.py" on the Adafruit Clue. You may do this any number of ways, but we recommend 
+that you create and edit your "code.py" file on your PC and then copy it onto
+the Adafruit Clue's "CIRCUITPY" drive. We recommend this method just in case
+the CIRCUITPY drive gets corrupted or if the Clue board gets damaged in any way,
+you will still have a copy of your code on your PC. 
+
+When the Adafruit Clue boots up or is reset, it will search for a Python file called
+"code.py" and attempt to execute it. If there are syntax or other errors during
+the execution of the file, the errors will be displayed on the Adafruit Clue's built-in 
+screen.
+
+To run the programs in the next sections, copy the code contents into a file
+called "code.py", attach your Adafruit Clue to your PC with a USB cable, and
+copy the file to the new drive that appears when the Adafruit is connected.
+The code will save onto the Clue and the Clue will run the program whenever it
+is powered up, even if it is not attached to a computer.
 
 Write your first Clue+CircuitPython+Dash program
 ................................................
@@ -98,8 +127,8 @@ the robot's LED lights, and reading data from the robot's various sensors,
 such as the wheel odometers, IR rangefinders, accelerometer, and more. 
 
 The next statement, ``robot.drive(30)``, uses the ``drive()`` member function
-to make Dash drive 30cm forward. The argument value is in units of centimeters
-and negative values make the robot drive backward.
+to make Dash drive 30cm forward. The argument value is in units of centimeters.
+Negative values make the robot drive backward.
 
 The final statement, ``robot.turn(-360)``, make the robot turn in a complete
 circle in the clockwise direction as viewed from above the robot. The argument

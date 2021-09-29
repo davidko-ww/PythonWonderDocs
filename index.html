@@ -93,6 +93,7 @@
 <li><a class="reference internal" href="#install-circuitpython">Install CircuitPython</a></li>
 <li><a class="reference internal" href="#install-circuitpython-adafruit-libraries">Install CircuitPython/Adafruit libraries</a></li>
 <li><a class="reference internal" href="#install-wonder-workshop-s-module-for-controlling-dash-cue-wonder">Install Wonder Workshop’s module for controlling Dash/Cue, ‘<code class="docutils literal notranslate"><span class="pre">wonder</span></code>’</a></li>
+<li><a class="reference internal" href="#running-python-programs-on-the-adafruit-clue">Running Python Programs on the Adafruit Clue</a></li>
 <li><a class="reference internal" href="#write-your-first-clue-circuitpython-dash-program">Write your first Clue+CircuitPython+Dash program</a></li>
 </ul>
 </li>
@@ -181,17 +182,17 @@ that can run on small microcontrollers, such as the Adafruit Clue.</p>
 <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial assumes that you are using a standard Dash robot with an Adafruit
-Clue and a CircuitPython version of at least 6.2.0.</p>
+Clue.</p>
 <div class="section" id="set-up-your-adafruit-clue">
 <h2>Set up your Adafruit Clue<a class="headerlink" href="#set-up-your-adafruit-clue" title="Permalink to this headline">¶</a></h2>
 <p>To get started, we will need to set up your Adafruit Clue.</p>
 <div class="section" id="install-circuitpython">
 <h3>Install CircuitPython<a class="headerlink" href="#install-circuitpython" title="Permalink to this headline">¶</a></h3>
-<p>First, you will need to install CircuitPython version 6.2.0.
-This tutorial will provide abriged setup instructions. Up-to-date instructions can be found
+<p>First, you will need to install CircuitPython version 7.0.0.
+This tutorial will provide abridged setup instructions. Up-to-date instructions can be found
 <a class="reference external" href="https://learn.adafruit.com/adafruit-clue/circuitpython">here</a>.</p>
 <ol class="arabic simple">
-<li><p>Download the CircuitPython 6.3.0 image <a class="reference external" href="https://circuitpython.org/board/clue_nrf52840_express/">here</a>.</p></li>
+<li><p>Download the CircuitPython 7.0.0 image <a class="reference external" href="https://circuitpython.org/board/clue_nrf52840_express/">here</a>.</p></li>
 <li><p>Attach your Adafruit Clue to a PC computer witha Micro-USB cable.</p></li>
 <li><p>Double-click the reset button on the back of the Adafruit Clue. It should
 now show up as a drive called “CLUEBOOT”.</p></li>
@@ -207,7 +208,7 @@ and CircuitPython provide libraries and modules to support a wide variety of
 sensors and peripherals. In order to control Wonder Workshop robots, a
 library must be installed in order to use the on-board Bluetooth BLE
 module.</p>
-<p>First, you will need to download the set of libraries <a class="reference external" href="https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20210811/adafruit-circuitpython-bundle-6.x-mpy-20210811.zip">here</a>.
+<p>First, you will need to download the set of libraries <a class="reference external" href="https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20210928/adafruit-circuitpython-bundle-7.x-mpy-20210928.zip">here</a>.
 The one library required to control Wonder Workshop robots is called
 <code class="docutils literal notranslate"><span class="pre">adafruit_ble</span></code>. To install the library, open the downloaded zip file and copy
 the <code class="docutils literal notranslate"><span class="pre">adafruit_ble</span></code> directory into the <code class="docutils literal notranslate"><span class="pre">CIRCUITPY/lib/</span></code> directory, where
@@ -219,7 +220,32 @@ especially if it will require additional sensors or peripherals in the future.</
 </div>
 <div class="section" id="install-wonder-workshop-s-module-for-controlling-dash-cue-wonder">
 <h3>Install Wonder Workshop’s module for controlling Dash/Cue, ‘<code class="docutils literal notranslate"><span class="pre">wonder</span></code>’<a class="headerlink" href="#install-wonder-workshop-s-module-for-controlling-dash-cue-wonder" title="Permalink to this headline">¶</a></h3>
-<p>TODO</p>
+<p>Download the <code class="docutils literal notranslate"><span class="pre">wonder</span></code> module here <a class="reference external" href="https://github.com/playi/PythonWonderDocs/raw/master/wonderpy_0.0.1_circuitpython_7.0.0.zip">here</a>.</p>
+<p>The zip file contains a directory named “wonder”. Copy the entire “wonder” directory
+onto your Clue board into the directory <code class="docutils literal notranslate"><span class="pre">&lt;CIRCUITPY&gt;/lib/</span></code> . You should now be able to
+use the <code class="docutils literal notranslate"><span class="pre">wonder</span></code> module on your Adafruit Clue Python programs.</p>
+</div>
+<div class="section" id="running-python-programs-on-the-adafruit-clue">
+<h3>Running Python Programs on the Adafruit Clue<a class="headerlink" href="#running-python-programs-on-the-adafruit-clue" title="Permalink to this headline">¶</a></h3>
+<p>You are now ready to write and run Python programs on your Adafruit Clue. You
+may use any basic text editor, such as Microsoft Notepad, to edit your Python
+programs, but we recommend using a real code editor. Many are available for free,
+such as the <a class="reference external" href="https://www.sublimetext.com/">Sublime Code Editor</a>.</p>
+<p>To run code on the Adafruit Clue, you will need to edit or create a file called
+“code.py” on the Adafruit Clue. You may do this any number of ways, but we recommend
+that you create and edit your “code.py” file on your PC and then copy it onto
+the Adafruit Clue’s “CIRCUITPY” drive. We recommend this method just in case
+the CIRCUITPY drive gets corrupted or if the Clue board gets damaged in any way,
+you will still have a copy of your code on your PC.</p>
+<p>When the Adafruit Clue boots up or is reset, it will search for a Python file called
+“code.py” and attempt to execute it. If there are syntax or other errors during
+the execution of the file, the errors will be displayed on the Adafruit Clue’s built-in
+screen.</p>
+<p>To run the programs in the next sections, copy the code contents into a file
+called “code.py”, attach your Adafruit Clue to your PC with a USB cable, and
+copy the file to the new drive that appears when the Adafruit is connected.
+The code will save onto the Clue and the Clue will run the program whenever it
+is powered up, even if it is not attached to a computer.</p>
 </div>
 <div class="section" id="write-your-first-clue-circuitpython-dash-program">
 <h3>Write your first Clue+CircuitPython+Dash program<a class="headerlink" href="#write-your-first-clue-circuitpython-dash-program" title="Permalink to this headline">¶</a></h3>
@@ -238,21 +264,21 @@ a 360 degree spin to the right:</p>
 module which contains the required classes and functions for controlling Wonder
 Workshop robots.</p>
 <p>The next statement reads <code class="docutils literal notranslate"><span class="pre">robot</span> <span class="pre">=</span> <span class="pre">wonder.Dash('Dash')</span></code>. The expression
-<code class="docutils literal notranslate"><span class="pre">wonder.Dash('Dash')</span></code> finds and connects to a robot named ‘Dash’<a class="footnote-reference brackets" href="#id6" id="id5">1</a> and creates
+<code class="docutils literal notranslate"><span class="pre">wonder.Dash('Dash')</span></code> finds and connects to a robot named ‘Dash’<a class="footnote-reference brackets" href="#id7" id="id6">1</a> and creates
 a <code class="docutils literal notranslate"><span class="pre">wonder.Dash</span></code> object. The object is then saved to a variable named <code class="docutils literal notranslate"><span class="pre">robot</span></code>.
 The new <code class="docutils literal notranslate"><span class="pre">robot</span></code> variable contains a great many member functions that perform
 a variety of functions, including moving the robot’s wheels and head, controlling
 the robot’s LED lights, and reading data from the robot’s various sensors,
 such as the wheel odometers, IR rangefinders, accelerometer, and more.</p>
 <p>The next statement, <code class="docutils literal notranslate"><span class="pre">robot.drive(30)</span></code>, uses the <code class="docutils literal notranslate"><span class="pre">drive()</span></code> member function
-to make Dash drive 30cm forward. The argument value is in units of centimeters
-and negative values make the robot drive backward.</p>
+to make Dash drive 30cm forward. The argument value is in units of centimeters.
+Negative values make the robot drive backward.</p>
 <p>The final statement, <code class="docutils literal notranslate"><span class="pre">robot.turn(-360)</span></code>, make the robot turn in a complete
 circle in the clockwise direction as viewed from above the robot. The argument
 is in units of degrees and positive values make the robot turn
 counter-clockwise.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id6">1</a></span></dt>
 <dd><p>Dash robots come from the factory with a default name of ‘Dash’. The robots may be renamed using the ‘wonder’ app, available on any smartphone.</p>
 </dd>
 </dl>
@@ -826,6 +852,49 @@ If it is being released, “button_down” will be false.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.play_audio_by_name">
+<span class="sig-name descname"><span class="pre">play_audio_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.play_audio_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play an audio file by name.</p>
+<p>Valid names are in the “sounds” submodule and include the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">HI</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">HUH</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">UH_OH</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">OKAY</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">SIGH</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">TADA</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">WEE</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">talk</span><span class="o">.</span><span class="n">BYE</span> 
+
+<span class="n">sounds</span><span class="o">.</span><span class="n">funny</span><span class="o">.</span><span class="n">BEEPS</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">funny</span><span class="o">.</span><span class="n">LASERS</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">funny</span><span class="o">.</span><span class="n">GOBBLE</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">funny</span><span class="o">.</span><span class="n">BUZZ</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">funny</span><span class="o">.</span><span class="n">AY_YAI_YAI</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">funny</span><span class="o">.</span><span class="n">SQUEAK</span> 
+
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">HORSE</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">CAT</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">DOG</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">DINOSAUR</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">LION</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">GOAT</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">CROCODILE</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">animal</span><span class="o">.</span><span class="n">ELEPHANT</span> 
+
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">FIRE_SIREN</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">TRUCK_HORN</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">CAR_ENGINE</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">CAR_TIRE_SQUEEN</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">HELICOPTER</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">JET_PLANE</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">BOAT</span> 
+<span class="n">sounds</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">TRAIN</span> 
+</pre></div>
+</div>
+<p>Example:</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="wonder.Dash.right_ear_led">
 <span class="sig-name descname"><span class="pre">right_ear_led</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">red</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">green</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.right_ear_led" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change Dash’s right ear LED color.</p>
@@ -855,6 +924,20 @@ global reference frame. See also: <a class="reference internal" href="#wonder.Da
 <dt class="sig sig-object py" id="wonder.Dash.stop">
 <span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Immediately stop Dash’s motors</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wonder.Dash.synth">
+<span class="sig-name descname"><span class="pre">synth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wonder.Dash.synth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make Dash play a synthesized sine wave (audio)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq</strong> (<em>int</em>) – A frequency in Hertz</p></li>
+<li><p><strong>duration</strong> (<em>float</em>) – A duration to play the sound is seconds</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
