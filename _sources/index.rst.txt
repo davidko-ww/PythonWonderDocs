@@ -38,7 +38,7 @@ This tutorial will provide abridged setup instructions. Up-to-date instructions 
 `here <https://learn.adafruit.com/adafruit-clue/circuitpython>`_.
 
 1. Download the CircuitPython 7.0.0 image `here <https://circuitpython.org/board/clue_nrf52840_express/>`_. 
-2. Attach your Adafruit Clue to a PC computer witha Micro-USB cable.
+2. Attach your Adafruit Clue to a PC computer with a Micro-USB cable.
 3. Double-click the reset button on the back of the Adafruit Clue. It should
    now show up as a drive called "CLUEBOOT". 
 4. Copy the image file downloaded earlier (should be a .uf2 file) to the
@@ -106,7 +106,7 @@ Write your first Clue+CircuitPython+Dash program
 We are now ready to try our first Python program that controls Dash. We will
 first present a complete code sample and then describe each line in detail.
 Here is a simple program which makes Dash drive 30cm forward and then performs
-a 360 degree spin to the right::
+a 360-degree spin to the right::
 
     import wonder
 
@@ -133,7 +133,7 @@ Negative values make the robot drive backward.
 The final statement, ``robot.turn(-360)``, make the robot turn in a complete
 circle in the clockwise direction as viewed from above the robot. The argument
 is in units of degrees and positive values make the robot turn
-counter-clockwise.
+counter clockwise.
 
 .. [1] Dash robots come from the factory with a default name of 'Dash'. The robots may be renamed using the 'wonder' app, available on any smartphone.
 
